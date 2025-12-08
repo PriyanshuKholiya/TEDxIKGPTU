@@ -16,7 +16,7 @@ export default function Navbar() {
         {/* Logo Image */}
         <NavLink to="/" onClick={closeMenu} className="flex items-center">
           <img 
-            src="/logo.png" 
+            src="/Logo.png" 
             alt="TEDxIKGPTU" 
             className="h-10 w-auto object-contain" // Adjust h-10 to fit your logo aspect ratio
           />
