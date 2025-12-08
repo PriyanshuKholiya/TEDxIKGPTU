@@ -1,0 +1,262 @@
+/*
+  Fresh, self-contained styles for SpeakerCard.
+  Prefix all rules with .speaker-card .sc-* to avoid global collisions.
+*/
+
+.speaker-card {
+  width: 440px;
+  height: 620px;
+  perspective: 1200px;
+  margin-bottom: 2rem;
+}
+
+.speaker-card .sc-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(10,10,14,0.9), rgba(18,18,22,0.95));
+  color: #fff;
+  border: 1px solid rgba(0,240,255,0.04);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  overflow: hidden;
+  /* Ensure no default transform that could cause tilt */
+  transform: none; 
+}
+.speaker-card .sc-card:hover { 
+  box-shadow: 0 14px 48px rgba(0,240,255,0.06), 0 6px 30px rgba(255,0,208,0.04); 
+  transform: translateY(-6px) scale(1.02); 
+}
+
+/* Flip engine */
+.speaker-card .sc-inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(.4,2,.6,1);
+}
+.speaker-card.flipped .sc-inner { transform: rotateY(180deg); }
+
+.speaker-card .sc-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+  /* FIX: Ensure no default Y-axis rotation on the front face */
+  transform: rotateY(0deg); 
+}
+
+.speaker-card .sc-front { background: #111; }
+
+.speaker-card .sc-image {
+  flex: 0 0 440px;
+  overflow: hidden;
+}
+.speaker-card .sc-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.speaker-card .sc-info {
+  padding: 1.2rem 1.2rem;
+  padding-bottom: calc(1.2rem + 4.5rem); 
+  background: rgba(24,24,24,0.94);
+  position: relative;
+}
+.speaker-card .sc-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.speaker-card .sc-title { color: var(--neon-pink); font-weight: 700; font-size: 1.02rem; text-shadow: 0 6px 24px rgba(255,63,166,0.06); }
+
+.speaker-card .sc-back {
+  background: #181818;
+  transform: rotateY(180deg);
+  padding: 0;
+  position: relative;
+  /* ⭐️ CRITICAL FIX APPLIED HERE: Sets the back face to the full height of the card */
+  height: 100%; 
+}
+.speaker-card .sc-back-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* CRUCIAL: Must be 100% of the constrained parent height */
+  /* ⭐️ CRITICAL FIX: Ensures padding is included in the 100% height, solving flex calculation issues */
+  box-sizing: border-box;
+  padding: 1.5rem 1.2rem;
+  /* ⭐️ FIX APPLIED HERE: Add bottom padding to clear the absolute flip button */
+  padding-bottom: 4.5rem; 
+  position: relative;
+}
+/* ⭐️ NEW RULE: Adds the necessary margin to the name on the back face */
+.speaker-card .sc-back-content .sc-name {
+    margin-bottom: 1rem;
+}
+.speaker-card .sc-desc {
+  margin-top: 0.2rem;
+  color: #eec55d;
+  font-size: 1rem;
+  line-height: 1.7;
+  overflow-y: auto; 
+  overflow-x: hidden;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  /* CRITICAL FLEX FIX 1: Use 0% for flex-basis in a column to enable scrolling */
+  flex: 1 1 0%;
+  /* ⭐️ CRITICAL FLEX FIX 2: Prevents content from forcing the flex item to be too tall. */
+  min-height: 0;
+  /* ⭐️ CRITICAL FIX 3: Ensures the height constraint is respected by the scrollable area. */
+  max-height: 100%;
+  text-shadow: 0 2px 8px rgba(238, 197, 93, 0.2);
+}
+
+/* Flip button (MODERNIZED LOOK & TILT FIX) */
+.speaker-card .sc-flip-btn {
+  position: absolute;
+  bottom: 1.0rem;
+  left: 50%;
+  transform: translateX(-50%); /* Ensures perfect centering, removing potential subtle tilt source */
+  width: auto;
+  min-width: 120px;
+  z-index: 5;
+  /* MODERNIZED: Subtle gradient for depth */
+  background: linear-gradient(145deg, #e62b1e, #b71c13); 
+  color: #fff;
+  border: none; /* No border for a cleaner look */
+  border-radius: 6px; /* Slightly softer corners */
+  padding: 0.7rem 1.6rem; /* Slightly more padding for a better feel */
+  font-size: 0.95rem; /* Slightly larger font */
+  font-weight: 700; /* Adjusted font weight */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  /* MODERNIZED: Softer, more diffused shadow */
+  box-shadow: 0 6px 16px rgba(230,43,30,0.25), 0 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 0.5px; /* Increased letter spacing */
+  text-transform: uppercase; /* Uppercase text for a modern touch */
+}
+
+/* hover / active / focus */
+.speaker-card .sc-flip-btn:hover {
+  transform: translateX(-50%) translateY(-2px) scale(1.02); /* Slight lift and scale */
+  /* MODERNIZED: Inverted gradient on hover */
+  background: linear-gradient(145deg, #b71c13, #e62b1e); 
+  box-shadow: 0 10px 25px rgba(230,43,30,0.35), 0 3px 6px rgba(0,0,0,0.3);
+}
+.speaker-card .sc-flip-btn:active {
+  transform: translateX(-50%) translateY(0px) scale(0.98); /* Slight press effect */
+  box-shadow: 0 4px 10px rgba(230,43,30,0.2);
+}
+.speaker-card .sc-flip-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(230,43,30,0.2), 0 6px 16px rgba(230,43,30,0.25);
+}
+
+/* Responsive adjustments for the larger card */
+@media (max-width: 1200px) {
+  .speaker-card { width: 400px; height: 560px; }
+  .speaker-card .sc-image { flex-basis: 380px; }
+  /* ⭐️ FIX MEDIA QUERY: Adjust padding for smaller card height */
+  .speaker-card .sc-back-content { padding-bottom: 4rem; } 
+}
+
+@media (max-width: 800px) {
+  .speaker-card { 
+    width: 88vw; 
+    max-width: 420px; 
+    height: 520px; /* Constrain height */
+    max-height: 85vh; /* NEW: Use viewport height for better fitting */
+    margin: 0 auto 1.5rem auto; 
+  }
+  .speaker-card .sc-card {
+    height: 100%;
+    min-height: 520px;
+    max-height: 100%; /* NEW: Constraint on inner card */
+  }
+  .speaker-card .sc-image { flex-basis: 380px; }
+  .speaker-card .sc-flip-btn { min-width: 100px; padding: 0.6rem 1.4rem; bottom: 0.8rem; }
+  .speaker-card .sc-info { padding-bottom: calc(1rem + 3.8rem); } 
+  /* ⭐️ FIX MEDIA QUERY: Adjust padding for smaller card height and button size */
+  .speaker-card .sc-back-content { padding-bottom: 3.8rem; } 
+}
+
+@media (max-width: 600px) {
+  .speaker-card { 
+    width: 92vw; 
+    max-width: 420px;
+    height: 520px; /* Constrain height */
+    max-height: 85vh; /* NEW: Use viewport height for better fitting */
+    min-height: 520px;
+    margin: 0 auto 1.5rem auto;
+  }
+  .speaker-card .sc-card {
+    height: 100%;
+    min-height: 520px;
+    max-height: 100%; /* NEW: Constraint on inner card */
+  }
+  .speaker-card .sc-image { 
+    flex-basis: 360px;
+    min-height: 360px;
+  }
+  .speaker-card .sc-image img {
+    object-fit: contain;
+    object-position: center;
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .speaker-card .sc-info {
+    flex: 0 1 auto;
+    padding: 1rem;
+    padding-bottom: calc(1rem + 3.6rem); 
+  }
+  .speaker-card .sc-flip-btn {
+    min-width: 90px;
+    padding: 0.5rem 1.1rem;
+    bottom: 0.7rem; 
+  }
+  /* ⭐️ FIX MEDIA QUERY: Adjust padding for smaller button size */
+  .speaker-card .sc-back-content { padding-bottom: 3.5rem; } 
+}
+
+@media (max-width: 500px) {
+  .speaker-card { 
+    width: 94vw; 
+    max-width: 94vw;
+    height: 540px; /* Constrain height */
+    max-height: 85vh; /* NEW: Use viewport height for better fitting */
+    min-height: 540px;
+    border-radius: 12px;
+    margin: 0 auto 1.5rem auto;
+  }
+  .speaker-card .sc-card { 
+    border-radius: 12px;
+    height: 100%;
+    min-height: 540px;
+    max-height: 100%; /* NEW: Constraint on inner card */
+  }
+  .speaker-card .sc-image { 
+    flex-basis: 340px;
+    min-height: 340px;
+  }
+  .speaker-card .sc-image img {
+    object-fit: contain;
+    object-position: center;
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .speaker-card .sc-info {
+    flex: 0 1 auto;
+    padding: 1rem 0.8rem;
+    padding-bottom: calc(1rem + 3.4rem); 
+  }
+  .speaker-card .sc-flip-btn {
+    min-width: 80px;
+    padding: 0.5rem 1.0rem;
+    bottom: 0.6rem; 
+  }
+  /* ⭐️ FIX MEDIA QUERY: Adjust padding for smallest button size */
+  .speaker-card .sc-back-content { padding-bottom: 3.2rem; } 
+}

@@ -1,0 +1,68 @@
+/* Main footer container */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 2.5rem 0 1.5rem 0;
+  border-top: 6px solid #181818;
+}
+
+/* Copyright text styling (in footer.css) */
+.footer-copyright {
+  color: #fff;
+  font-family: 'Audiowide', 'Orbitron', 'Bebas Neue', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  
+  /* ALIGN TEXT TO THE RIGHT */
+  text-align: right; 
+  margin: 0; /* Remove default p margin */
+  
+  /* REMOVE the previous left margin property */
+}
+
+/* Logo styling */
+.footer-logo {
+  height: 3.2rem;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
+/* Inner container for layout (in footer.css) */
+.footer-inner {
+  /* Use Flexbox for simple left/right layout */
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem; 
+
+  /* Centering and padding */
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  
+  /* INCREASE RIGHT PADDING to 7rem for full clearance from the fixed button. 
+     Keep left padding at 1.5rem for logo alignment. */
+  padding: 0 7rem 0 1.5rem; 
+  box-sizing: border-box;
+}
+
+/* ... (the rest of your CSS remains the same) ... */
+
+/* Responsive styles for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+  .footer-inner {
+    /* Stack logo and copyright vertically */
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+    
+    /* Ensure padding is uniform on mobile when content is centered/stacked */
+    padding: 0 1.5rem; /* Reset padding when elements stack */
+  }
+
+  /* ... (rest of media query remains the same) ... */
+}
