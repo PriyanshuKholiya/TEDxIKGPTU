@@ -16,7 +16,7 @@ export default function Navbar() {
         {/* Logo Image */}
         <NavLink to="/" onClick={closeMenu} className="flex items-center">
           <img 
-            src="/Public/logo.png" 
+            src="/logo.png" 
             alt="TEDxIKGPTU" 
             className="h-10 w-auto object-contain" // Adjust h-10 to fit your logo aspect ratio
           />
@@ -27,7 +27,7 @@ export default function Navbar() {
           <ul className="flex gap-10 text-sm font-semibold tracking-wide">
             <li><NavLink to="/" className={({isActive}) => isActive ? "text-ted-red" : "text-white hover:text-ted-red transition-colors"}>Home</NavLink></li>
             <li><NavLink to="/about" className={({isActive}) => isActive ? "text-ted-red" : "text-white hover:text-ted-red transition-colors"}>About</NavLink></li>
-            <li><NavLink to="/#" className={({isActive}) => isActive ? "text-ted-red" : "text-white hover:text-ted-red transition-colors"}>Speakers</NavLink></li>
+            <li><NavLink to="/" className={({isActive}) => isActive ? "text-ted-red" : "text-white hover:text-ted-red transition-colors"}>Speakers</NavLink></li>
             <li><NavLink to="/rules" className={({isActive}) => isActive ? "text-ted-red" : "text-white hover:text-ted-red transition-colors"}>Rules</NavLink></li>
           </ul>
           <button 
