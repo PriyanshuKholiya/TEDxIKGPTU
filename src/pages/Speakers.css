@@ -106,13 +106,40 @@
 }
 
 /* Mobile Responsiveness */
+/* Speakers.css - Mobile Responsiveness Section */
+
 @media (max-width: 600px) {
-    .speakers-grid {
-        grid-template-columns: 1fr; 
-        gap: 2rem;
-        padding: 0 1rem;
+    .speakers-section {
+        width: 100% !important;
+        padding: 1rem !important; /* Reduce container padding */
+        box-sizing: border-box;
     }
+
+    .speakers-grid {
+        /* Force single column */
+        grid-template-columns: 1fr;
+        
+        /* Reduce gap between cards */
+        gap: 2rem; 
+        
+        /* Remove side padding from grid, relying on container padding */
+        padding: 0; 
+        
+        /* KEY FIX: Center the grid items explicitly */
+        justify-items: center; 
+        width: 100%;
+    }
+    
     .speaker-card {
-        max-width: 300px; 
+        /* KEY FIX: Allow cards to shrink below 280px if screen is tiny */
+        width: 100%;
+        max-width: 280px; /* Make them slightly smaller on mobile */
+        margin: 0 auto; /* Force horizontal centering */
+    }
+    
+    .card-info {
+        /* Slightly reduce height on mobile if needed, or keep 140px */
+        height: 130px; 
+        padding: 0.8rem;
     }
 }
