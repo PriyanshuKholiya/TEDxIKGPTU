@@ -1,108 +1,143 @@
 const speakers = [
   {
-    name: "Speaker 1",
-    title: "Title Placeholder",
-    img: "/Speakers/Speaker1.png",
+    name: "Amit Abrol",
+    title: "Managing Director - Abrol Institute",
+    img: "/Speakers/8.png",
     objectPosition: "center top",
-    description: "This speaker brings experience and knowledge in their field, contributing insights and perspectives relevant to the event."
+    description: ""
   },
   {
-    name: "Speaker 2",
-    img: "/Speakers/Speaker2.png",
+    name: "Anuradha Chawla",
+    img: "/Speakers/6.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "This speaker offers guidance and expertise across various professional and educational domains."
+    title: "Founder & CEO - Bbetter HR Solutions",
+    description: ""
   },
   {
-    name: "Speaker 3",
-    img: "/Speakers/Speaker3.png",
+    name: "Arzoi Makkar",
+    img: "/Speakers/15.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "An experienced professional focused on helping individuals grow through structured approaches and impactful communication."
+    title: "Student - Dass and Brown Experiential School, Panchkula",
+    description: ""
   },
   {
-    name: "Speaker 4",
-    img: "/Speakers/Speaker4.png",
+    name: "Capt. Mahesh Chandra Singh Bhakuni",
+    img: "/Speakers/1.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "A leadership and development expert who empowers individuals and organizations through strategic thinking and clarity."
+    title: "CEO - MB Solutions",
+    description: ""
   },
   {
-    name: "Speaker 5",
-    img: "/Speakers/Speaker5.png",
+    name: "Col. SPS Cheema",
+    img: "/Speakers/3.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "A seasoned professional who shares insights on communication, personal growth, and industry-relevant skills."
+    title: "CEO - Indus Public School, Mohali",
+    description: ""
   },
   {
-    name: "Speaker 6",
-    title: "Title Placeholder",
-    img: "/Speakers/Speaker6.png",
+    name: "Darsh Juneja",
+    title: "Student - St. George's College, Mussoorie",
+    img: "/Speakers/20.png",
     objectPosition: "center top",
-    description: "A specialist contributing knowledge in management, strategy, and structured professional practices."
+    description: ""
   },
   {
-    name: "Speaker 7",
-    img: "/Speakers/Speaker7.png",
+    name: "Dr. Dalveer Bawa",
+    img: "/Speakers/4.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "An academic and mentor committed to fostering learning, development, and meaningful educational experiences."
+    title: "Founder & CEO - 91 Blackboard Advisory Solutions",
+    description: ""
   },
   {
-    name: "Speaker 8",
-    img: "/Speakers/Speaker8.png",
+    name: "Dr. Mehak Bansal",
+    img: "/Speakers/19.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "A well-being mentor guiding individuals in building clarity, balance, and purposeful personal growth."
+    title: "Sr. Consultant, Pediatrics & Pediatric Intensive Care, Clio Mother & Child Institute",
+    description: ""
   },
   {
-    name: "Speaker 9",
-    img: "/Speakers/Speaker9.png",
+    name: "Dr. Parveen Gupta",
+    img: "/Speakers/2.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "A trainer and facilitator focused on skill-building, emotional resilience, and empowering diverse communities."
+    title: "Chairman - MAlINS Marengo Asia Hospitals, Gurugram",
+    description: ""
   },
   {
-    name: "Speaker 10",
-    img: "/Speakers/Speaker10.png",
+    name: "Dr. Purvi Jayaraaj",
+    img: "/Speakers/7.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "A creative and entrepreneurial individual who inspires others through artistic expression and innovation."
+    title: "Doctor of Alternative & Integrative Medicine - Samrruddhi Healing Center",
+    description: ""
   },
   {
-    name: "Speaker 11",
-    img: "/Speakers/Speaker11.png",
+    name: "Dr. Stuti Nilesh Pardhe",
+    img: "/Speakers/9.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "A mentor who blends strategic thinking with personal development to support individuals in reaching their goals."
+    title: "Founder - Etsah Trinity",
+    description: ""
   },
   {
-    name: "Speaker 12",
-    img: "/Speakers/Speaker12.png",
+    name: "Geetanjali Sial Khurana",
+    img: "/Speakers/11.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "A professional offering insights into business, investment, and strategic growth opportunities."
+    title: "CEO - Geetanjil's Success Academy",
+    description: ""
   },
   {
-    name: "Speaker 13",
-    img: "/Speakers/Speaker13.png",
+    name: "Keshav Arora",
+    img: "/Speakers/12.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "A leadership mentor guiding professionals through transformative journeys centered on clarity and purpose."
+    title: "Managing Director - Motia Sunrise Group",
+    description: ""
   },
   {
-    name: "Speaker 14",
-    img: "/Speakers/Speaker14.png",
+    name: "Kshitija Keshav Tashi",
+    img: "/Speakers/18.png",
     objectPosition: "top",
-    title: "Title Placeholder",
-    description: "A young and enthusiastic individual passionate about learning, speaking, and contributing to meaningful causes."
+    title: "Tested by TEDXIKGPTU",
+    description: ""
   },
   {
-    name: "Speaker 15",
-    title: "Title Placeholder",
-    img: "/Speakers/Speaker15.png",
+    name: "Punit Bansal",
+    title: "Director - Theon Pharmaceuticals Ltd",
+    img: "/Speakers/14.png",
     objectPosition: "center top",
-    description: "A student speaker focused on learning, creativity, and exploring diverse ideas across academic and personal interests."
+    description: ""
+  },
+  {
+    name: "Radhika Cheema",
+    img: "/Speakers/5.png",
+    objectPosition: "top",
+    title: "MD - Deerghavurveda",
+    description: ""
+  },
+  {
+    name: "Ravi Sodhi",
+    img: "/Speakers/13.png",
+    objectPosition: "top",
+    title: "Senior Advocate & Senior Counsel, Govt. of India",
+    description: ""
+  },
+  {
+    name: "Swaraj Swain",
+    img: "/Speakers/16.png",
+    objectPosition: "top",
+    title: "Student - B.Tech (Electronics & Communication Engineering), IKGPTU, Kapurthala",
+    description: ""
+  },
+  {
+    name: "Tishya Jain",
+    img: "/Speakers/10.png",
+    objectPosition: "top",
+    title: "Student - Kundan Vidya Mandir, Ludhiana",
+    description: ""
+  },
+  {
+    name: "Vibha Khosla",
+    img: "/Speakers/17.png",
+    objectPosition: "top",
+    title: "Principal - Modern School, Vasant Vihar",
+    description: ""
   }
 ];
 
