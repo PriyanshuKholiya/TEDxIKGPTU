@@ -27,13 +27,7 @@ const speakers = [
     title: "CEO - MB Solutions",
     description: ""
   },
-  {
-    name: "Col. SPS Cheema",
-    img: "/Speakers/3.png",
-    objectPosition: "top",
-    title: "CEO - Indus Public School, Mohali",
-    description: ""
-  },
+
   {
     name: "Darsh Juneja",
     title: "Student - St. George's College, Mussoorie",
@@ -77,26 +71,13 @@ const speakers = [
     description: ""
   },
   {
-    name: "Geetanjali Sial Khurana",
-    img: "/Speakers/11.png",
-    objectPosition: "top",
-    title: "CEO - Geetanjil's Success Academy",
-    description: ""
-  },
-  {
     name: "Keshav Arora",
     img: "/Speakers/12.png",
     objectPosition: "top",
     title: "Managing Director - Motia Sunrise Group",
     description: ""
   },
-  {
-    name: "Kshitija Keshav Tashi",
-    img: "/Speakers/18.png",
-    objectPosition: "top",
-    title: "Tested by TEDXIKGPTU",
-    description: ""
-  },
+
   {
     name: "Punit Bansal",
     title: "Director - Theon Pharmaceuticals Ltd",
@@ -125,20 +106,8 @@ const speakers = [
     title: "Student - B.Tech (Electronics & Communication Engineering), IKGPTU, Kapurthala",
     description: ""
   },
-  {
-    name: "Tishya Jain",
-    img: "/Speakers/10.png",
-    objectPosition: "top",
-    title: "Student - Kundan Vidya Mandir, Ludhiana",
-    description: ""
-  },
-  {
-    name: "Vibha Khosla",
-    img: "/Speakers/17.png",
-    objectPosition: "top",
-    title: "Principal - Modern School, Vasant Vihar",
-    description: ""
-  }
+  
+ 
 ];
 
 export default speakers;
